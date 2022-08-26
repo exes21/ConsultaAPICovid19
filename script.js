@@ -1,12 +1,8 @@
 window.onload = iniciar();
 
 function iniciar() {
-
     let btnBuscar = document.getElementById("btnBuscarDatos");
-
     btnBuscar.addEventListener("click", clicKBoton);
-
-
 }
 
 async function cargarURL(url) {
@@ -22,28 +18,17 @@ async function clicKBoton() {
     let negativos = document.getElementById("negativos");
     let hospitalizados = document.getElementById("hospitalizados");
 
-    if (stringFecha > "20210307" || stringFecha < "20200113") {
+    if (stringFecha > json[length].date || stringFecha < json[0].date) {
         alert("No contamos con datos de esa fecha, la última actualización de datos fue el 07 de marzo del 2021" +
             "el primer dato registrado fue el 13 de enero del 2020");
-
     }
     else {
-        
         for (let i = 0; i < json.length; i++) {
-
             if (json[i].date == stringFecha) {
                 positivos.innerText = json[i].positive;
                 negativos.innerText = json[i].negative;
                 hospitalizados.innerText = json[i].hospitalized;
             }
-
-
         }
-
-
-
     }
-
-
-
 }
