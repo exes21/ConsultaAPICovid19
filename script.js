@@ -28,7 +28,7 @@ async function clicKBoton() {
 
     }
     else {
-        
+
         for (let i = 0; i < json.length; i++) {
 
             if (json[i].date == stringFecha) {
